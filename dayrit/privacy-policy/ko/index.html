@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보처리방침 - 데이리트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .app-name {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: #888;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #444;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background-color: #f5f5f7;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            background-color: #f5f5f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .app-store-link {
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <a href="../">English</a> | 한국어
+        </div>
+
+        <header>
+            <h1>개인정보처리방침</h1>
+            <p class="app-name">데이리트 (Dayrit)</p>
+            <p class="last-updated">최종 업데이트: 2026년 3월 3일</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>1. 소개</h2>
+                <p>데이리트(이하 "당사")는 이용자의 개인정보를 소중히 여기며, 정보 처리에 대한 투명성을 보장하기 위해 노력합니다. 본 개인정보처리방침은 당사가 수집하는 정보, 사용 방법 및 이용자의 권리에 대해 설명합니다.</p>
+            </section>
+
+            <section>
+                <h2>2. 수집하는 개인정보</h2>
+
+                <p><strong>계정 정보:</strong> Apple 또는 Google 로그인(Firebase Authentication)을 통해 다음 정보를 수집합니다:</p>
+                <ul>
+                    <li><strong>이메일 주소</strong></li>
+                    <li><strong>표시 이름</strong> (로그인 제공업체에서 제공하는 이름)</li>
+                    <li><strong>사용자 ID</strong> (Firebase에서 부여하는 고유 식별자)</li>
+                </ul>
+
+                <p><strong>습관 데이터:</strong> 서비스 제공을 위해 Firebase Firestore에 다음 데이터를 저장합니다:</p>
+                <ul>
+                    <li>습관 이름 및 설명</li>
+                    <li>습관 완료 기록 (날짜 및 상태)</li>
+                    <li>프리미엄 구독 상태</li>
+                </ul>
+
+                <p><strong>기기에만 저장되는 데이터:</strong> 다음 데이터는 사용자의 기기에만 저장되며 서버로 전송되지 않습니다:</p>
+                <ul>
+                    <li>앱 설정 및 환경설정 (SharedPreferences)</li>
+                    <li>알림 설정</li>
+                    <li>iOS 위젯 표시 데이터 (공유 앱 그룹)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. 개인정보의 이용 목적</h2>
+                <p>수집된 정보는 다음 목적으로 사용됩니다:</p>
+                <ul>
+                    <li>습관 추적 서비스의 제공 및 유지</li>
+                    <li>기기 간 습관 데이터 동기화</li>
+                    <li>계정 및 프리미엄 구독 관리</li>
+                    <li>비프리미엄 사용자에 대한 광고 표시</li>
+                    <li>앱 및 사용자 경험 개선</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. 광고</h2>
+                <p>데이리트는 비프리미엄 사용자에게 광고를 표시하기 위해 Google Mobile Ads(AdMob)를 사용합니다. AdMob은 광고 개인화를 위해 다음 데이터를 수집하고 사용할 수 있습니다:</p>
+                <ul>
+                    <li>기기 식별자</li>
+                    <li>사용 데이터</li>
+                    <li>대략적인 위치 (IP 주소 기반)</li>
+                </ul>
+                <p>Google의 광고 데이터 처리에 대한 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>을 참조하세요.</p>
+                <div class="highlight">
+                    <p><strong>프리미엄 사용자에게는 광고가 표시되지 않으며</strong>, 광고 관련 데이터도 수집되지 않습니다.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>5. 인앱 결제</h2>
+                <p>데이리트는 Apple App Store 및 Google Play Store를 통해 프리미엄 구독을 제공합니다. 모든 결제 처리는 Apple 또는 Google에서 담당합니다. 당사는 결제 정보를 수집하거나 저장하지 않으며, 구독 상태 확인 정보만 수신합니다.</p>
+            </section>
+
+            <section>
+                <h2>6. 알림</h2>
+                <p>데이리트는 습관 리마인더를 위해 로컬 알림만 사용합니다. Firebase Cloud Messaging(FCM) 또는 기타 푸시 알림 서비스를 사용하지 않습니다. 알림 데이터는 사용자의 기기에서만 처리됩니다. 앱 설정 또는 기기 설정에서 언제든지 알림을 활성화하거나 비활성화할 수 있습니다.</p>
+            </section>
+
+            <section>
+                <h2>7. iOS 위젯</h2>
+                <p>데이리트는 홈 화면 위젯을 통해 습관 데이터를 표시합니다. 위젯 데이터는 공유 앱 그룹 컨테이너를 사용하여 메인 앱과 위젯 확장 간에 공유됩니다. 이 데이터는 기기에만 유지되며 외부 서버로 전송되지 않습니다.</p>
+            </section>
+
+            <section>
+                <h2>8. 데이터 저장 및 보안</h2>
+                <p><strong>클라우드 저장:</strong> 계정 및 습관 데이터는 전송 중 및 저장 시 암호화를 포함한 업계 표준 보안 조치를 제공하는 Firebase Firestore에 저장됩니다.</p>
+                <p><strong>로컬 저장:</strong> 앱 설정 및 환경설정은 SharedPreferences를 사용하여 기기에 로컬로 저장됩니다.</p>
+            </section>
+
+            <section>
+                <h2>9. 계정 삭제</h2>
+                <p>앱 설정에서 언제든지 계정을 삭제할 수 있습니다. 계정을 삭제하면:</p>
+                <ul>
+                    <li>Firestore에 저장된 모든 습관 데이터가 영구적으로 삭제됩니다</li>
+                    <li>Firebase Authentication 계정이 제거됩니다</li>
+                    <li>로컬에 저장된 데이터가 삭제됩니다</li>
+                    <li>이 작업은 되돌릴 수 없습니다</li>
+                </ul>
+                <div class="highlight">
+                    <p><strong>참고:</strong> 활성화된 프리미엄 구독이 있는 경우, 계정 삭제 전에 App Store 또는 Google Play Store에서 구독을 취소해주세요. 계정 삭제 시 구독이 자동으로 취소되지 않습니다.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>10. 아동의 개인정보 보호</h2>
+                <p>데이리트는 만 13세 미만의 아동을 대상으로 하지 않습니다. 당사는 만 13세 미만 아동의 개인정보를 의도적으로 수집하지 않습니다. 보호자께서 자녀가 당사에 개인정보를 제공했다고 판단되시면 연락해주시기 바랍니다. 즉시 해당 정보를 삭제하겠습니다.</p>
+            </section>
+
+            <section>
+                <h2>11. 제3자 서비스</h2>
+                <p>당사는 다음 제3자 서비스를 사용합니다:</p>
+                <ul>
+                    <li><strong>Firebase Authentication (Google):</strong> 사용자 로그인. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
+                    <li><strong>Firebase Firestore (Google):</strong> 클라우드 데이터 저장. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
+                    <li><strong>Google Mobile Ads (AdMob):</strong> 광고 표시. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a></li>
+                    <li><strong>RevenueCat:</strong> 인앱 결제 및 구독 관리. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat 개인정보처리방침</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>12. 방침 변경</h2>
+                <p>당사는 본 개인정보처리방침을 수시로 업데이트할 수 있습니다. 변경 시 페이지 상단의 "최종 업데이트" 날짜를 갱신합니다. 정기적으로 본 방침을 검토하시기 바랍니다.</p>
+            </section>
+
+            <section>
+                <h2>13. 문의</h2>
+                <p>본 개인정보처리방침 또는 데이터 처리에 대한 질문이나 우려사항이 있으시면 아래로 연락해주세요:</p>
+                <div class="contact-info">
+                    <p><strong>이메일:</strong> <a href="mailto:dayseed.help@gmail.com">dayseed.help@gmail.com</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Dayseed. All rights reserved.</p>
+            <a href="#" class="app-store-link">App Store에서 보기</a>
+        </footer>
+    </div>
+</body>
+</html>
