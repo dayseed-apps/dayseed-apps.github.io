@@ -166,9 +166,8 @@
 
                 <p><strong>Habit Data:</strong> We store the following data in Firebase Firestore to provide our service:</p>
                 <ul>
-                    <li>Habit names and descriptions</li>
-                    <li>Habit completion records (dates and status)</li>
-                    <li>Premium subscription status</li>
+                    <li>Habit settings (name, icon, repeat days, reminder time, etc.)</li>
+                    <li>Habit completion records (per-date completion status or counts)</li>
                 </ul>
 
                 <p><strong>Locally Stored Data:</strong> The following data is stored only on your device and is not transmitted to our servers:</p>
@@ -176,6 +175,7 @@
                     <li>App settings and preferences (via SharedPreferences)</li>
                     <li>Notification settings</li>
                     <li>Home screen widget display data (via shared local storage)</li>
+                    <li>Premium purchase status cache (actual purchase verification is handled by Apple/Google)</li>
                 </ul>
             </section>
 
@@ -185,7 +185,7 @@
                 <ul>
                     <li>To provide and maintain the habit tracking service</li>
                     <li>To sync your habit data across devices</li>
-                    <li>To manage your account and premium subscription</li>
+                    <li>To manage your account and premium purchase</li>
                     <li>To display relevant advertisements (for non-premium users)</li>
                     <li>To improve our app and user experience</li>
                 </ul>
@@ -200,14 +200,15 @@
                     <li>Approximate location (based on IP address)</li>
                 </ul>
                 <p>You can learn more about Google's advertising data practices at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>.</p>
+                <p>On iOS, we request tracking permission via App Tracking Transparency; if you decline, only non-personalized ads will be shown.</p>
                 <div class="highlight">
                     <p><strong>Premium users are not shown any advertisements</strong> and no advertising-related data is collected for them.</p>
                 </div>
             </section>
 
             <section>
-                <h2>5. In-App Purchases</h2>
-                <p>Dayrit offers premium subscriptions through Apple's App Store and Google Play Store. All payment processing is handled by Apple or Google respectively. We do not collect or store your payment information. We only receive confirmation of your subscription status.</p>
+                <h2>5. In-App Purchase</h2>
+                <p>Dayrit offers a one-time premium purchase through Apple's App Store and Google Play Store. All payment processing is handled by Apple or Google respectively. We do not collect or store your payment information; we only receive purchase confirmation.</p>
             </section>
 
             <section>
@@ -235,9 +236,6 @@
                     <li>Locally stored data will be cleared</li>
                     <li>This action is irreversible</li>
                 </ul>
-                <div class="highlight">
-                    <p><strong>Note:</strong> If you have an active premium subscription, please cancel it through the App Store or Google Play Store before deleting your account, as account deletion does not automatically cancel subscriptions.</p>
-                </div>
             </section>
 
             <section>
@@ -251,8 +249,10 @@
                 <ul>
                     <li><strong>Firebase Authentication (Google):</strong> For user sign-in. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a></li>
                     <li><strong>Firebase Firestore (Google):</strong> For cloud data storage. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a></li>
+                    <li><strong>Firebase Analytics (Google):</strong> For usage analytics. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a></li>
+                    <li><strong>Firebase Crashlytics (Google):</strong> For crash reporting. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a></li>
+                    <li><strong>Firebase Remote Config (Google):</strong> For remote app configuration. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a></li>
                     <li><strong>Google Mobile Ads (AdMob):</strong> For displaying advertisements. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
-                    <li><strong>RevenueCat:</strong> For managing in-app purchases and subscriptions. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat Privacy Policy</a></li>
                 </ul>
             </section>
 

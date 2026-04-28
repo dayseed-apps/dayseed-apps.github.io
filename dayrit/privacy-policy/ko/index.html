@@ -166,9 +166,8 @@
 
                 <p><strong>습관 데이터:</strong> 서비스 제공을 위해 Firebase Firestore에 다음 데이터를 저장합니다:</p>
                 <ul>
-                    <li>습관 이름 및 설명</li>
-                    <li>습관 완료 기록 (날짜 및 상태)</li>
-                    <li>프리미엄 구독 상태</li>
+                    <li>습관 설정 정보 (이름, 아이콘, 반복 요일, 리마인더 시간 등)</li>
+                    <li>습관 완료 기록 (날짜별 완료 상태 또는 카운트)</li>
                 </ul>
 
                 <p><strong>기기에만 저장되는 데이터:</strong> 다음 데이터는 사용자의 기기에만 저장되며 서버로 전송되지 않습니다:</p>
@@ -176,6 +175,7 @@
                     <li>앱 설정 및 환경설정 (SharedPreferences)</li>
                     <li>알림 설정</li>
                     <li>홈 화면 위젯 표시 데이터 (공유 저장소)</li>
+                    <li>프리미엄 구매 상태 캐시 (실제 구매 검증은 Apple/Google이 담당)</li>
                 </ul>
             </section>
 
@@ -185,7 +185,7 @@
                 <ul>
                     <li>습관 추적 서비스의 제공 및 유지</li>
                     <li>기기 간 습관 데이터 동기화</li>
-                    <li>계정 및 프리미엄 구독 관리</li>
+                    <li>계정 및 프리미엄 구매 관리</li>
                     <li>비프리미엄 사용자에 대한 광고 표시</li>
                     <li>앱 및 사용자 경험 개선</li>
                 </ul>
@@ -200,6 +200,7 @@
                     <li>대략적인 위치 (IP 주소 기반)</li>
                 </ul>
                 <p>Google의 광고 데이터 처리에 대한 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a>을 참조하세요.</p>
+                <p>iOS에서는 App Tracking Transparency를 통해 사용자에게 추적 권한을 요청하며, 거부 시 비개인화 광고만 제공됩니다.</p>
                 <div class="highlight">
                     <p><strong>프리미엄 사용자에게는 광고가 표시되지 않으며</strong>, 광고 관련 데이터도 수집되지 않습니다.</p>
                 </div>
@@ -207,7 +208,7 @@
 
             <section>
                 <h2>5. 인앱 결제</h2>
-                <p>데이리트는 Apple App Store 및 Google Play Store를 통해 프리미엄 구독을 제공합니다. 모든 결제 처리는 Apple 또는 Google에서 담당합니다. 당사는 결제 정보를 수집하거나 저장하지 않으며, 구독 상태 확인 정보만 수신합니다.</p>
+                <p>데이리트는 Apple App Store 및 Google Play Store를 통해 일회성 프리미엄 구매를 제공합니다. 모든 결제 처리는 Apple 또는 Google에서 담당하며, 당사는 결제 정보를 수집하거나 저장하지 않고 구매 확인 정보만 수신합니다.</p>
             </section>
 
             <section>
@@ -235,9 +236,6 @@
                     <li>로컬에 저장된 데이터가 삭제됩니다</li>
                     <li>이 작업은 되돌릴 수 없습니다</li>
                 </ul>
-                <div class="highlight">
-                    <p><strong>참고:</strong> 활성화된 프리미엄 구독이 있는 경우, 계정 삭제 전에 App Store 또는 Google Play Store에서 구독을 취소해주세요. 계정 삭제 시 구독이 자동으로 취소되지 않습니다.</p>
-                </div>
             </section>
 
             <section>
@@ -251,8 +249,10 @@
                 <ul>
                     <li><strong>Firebase Authentication (Google):</strong> 사용자 로그인. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
                     <li><strong>Firebase Firestore (Google):</strong> 클라우드 데이터 저장. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
+                    <li><strong>Firebase Analytics (Google):</strong> 사용 행동 분석. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
+                    <li><strong>Firebase Crashlytics (Google):</strong> 충돌 리포트 수집. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
+                    <li><strong>Firebase Remote Config (Google):</strong> 앱 구성 원격 관리. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase 개인정보처리방침</a></li>
                     <li><strong>Google Mobile Ads (AdMob):</strong> 광고 표시. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google 개인정보처리방침</a></li>
-                    <li><strong>RevenueCat:</strong> 인앱 결제 및 구독 관리. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat 개인정보처리방침</a></li>
                 </ul>
             </section>
 
