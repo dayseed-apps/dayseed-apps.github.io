@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayseed</title>
+    <meta name="description" content="Dayseed는 매일의 작은 습관을 돕는 모바일 앱을 만드는 팀입니다. Dayseed builds mobile apps that help you build small daily habits.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        .language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .language-selector button {
+            background: none;
+            border: none;
+            font: inherit;
+            color: #888;
+            cursor: pointer;
+            padding: 0 4px;
+        }
+
+        .language-selector button.active {
+            color: #007aff;
+            font-weight: 600;
+        }
+
+        .language-selector button:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .brand {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 17px;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 36px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #444;
+        }
+
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .intro {
+            color: #444;
+        }
+
+        .app-grid {
+            margin-top: 16px;
+        }
+
+        .app-card {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .app-card .app-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .app-card .app-kind {
+            font-size: 14px;
+            color: #007aff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .app-card .app-desc {
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        .app-links {
+            font-size: 14px;
+        }
+
+        .app-links a {
+            margin-right: 16px;
+            white-space: nowrap;
+        }
+
+        .contact-section {
+            background-color: #f5f5f7;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-section .label {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .contact-section .value {
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #666;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 16px;
+            }
+
+            .brand {
+                font-size: 32px;
+            }
+
+            .tagline {
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .app-card,
+            .contact-section {
+                padding: 16px;
+            }
+
+            .app-links a {
+                display: block;
+                margin: 0 0 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button type="button" data-lang="ko" class="active">한국어</button>
+            |
+            <button type="button" data-lang="en">English</button>
+        </div>
+
+        <header>
+            <div class="brand">Dayseed</div>
+            <p class="tagline">
+                <span data-ko>작은 습관이 매일을 바꿉니다</span>
+                <span data-en hidden>Small habits, better days</span>
+            </p>
+        </header>
+
+        <main>
+            <section>
+                <h2>
+                    <span data-ko>소개</span>
+                    <span data-en hidden>About</span>
+                </h2>
+                <p class="intro">
+                    <span data-ko>Dayseed는 일상의 작은 습관을 꾸준히 이어가도록 돕는 모바일 앱을 만드는 팀입니다. 복잡하지 않고, 매일 쓰기 좋은 도구를 지향합니다.</span>
+                    <span data-en hidden>Dayseed is a team that builds mobile apps to help you keep up small daily habits. We aim for simple tools that are easy to use every day.</span>
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    <span data-ko>앱</span>
+                    <span data-en hidden>Our Apps</span>
+                </h2>
+                <div class="app-grid">
+                    <div class="app-card">
+                        <div class="app-title">dayrit</div>
+                        <div class="app-kind">
+                            <span data-ko>습관 트래커</span>
+                            <span data-en hidden>Habit Tracker</span>
+                        </div>
+                        <p class="app-desc">
+                            <span data-ko>매일의 습관을 가볍게 기록하고 이어가도록 돕는 습관 트래커입니다.</span>
+                            <span data-en hidden>A simple habit tracker that helps you log and keep up your daily habits.</span>
+                        </p>
+                        <div class="app-links">
+                            <a href="https://apps.apple.com/app/id6760887398" target="_blank" rel="noopener noreferrer">App Store</a>
+                            <a href="/dayrit/privacy-policy/">
+                                <span data-ko>개인정보처리방침</span><span data-en hidden>Privacy Policy</span>
+                            </a>
+                            <a href="/dayrit/terms/">
+                                <span data-ko>이용약관</span><span data-en hidden>Terms</span>
+                            </a>
+                            <a href="/dayrit/support/">
+                                <span data-ko>고객지원</span><span data-en hidden>Support</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    <span data-ko>연락처</span>
+                    <span data-en hidden>Contact</span>
+                </h2>
+                <div class="contact-section">
+                    <p class="label">
+                        <span data-ko>이메일</span>
+                        <span data-en hidden>Email</span>
+                    </p>
+                    <p class="value"><a href="mailto:dayseed.help@gmail.com">dayseed.help@gmail.com</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/dayrit/privacy-policy/">
+                    <span data-ko>개인정보처리방침</span><span data-en hidden>Privacy Policy</span>
+                </a>
+                <a href="/dayrit/terms/">
+                    <span data-ko>이용약관</span><span data-en hidden>Terms of Service</span>
+                </a>
+                <a href="mailto:dayseed.help@gmail.com">
+                    <span data-ko>문의</span><span data-en hidden>Contact</span>
+                </a>
+            </div>
+            <p>&copy; 2026 Dayseed. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('.language-selector button');
+
+            function setLang(lang) {
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-ko]').forEach(function (el) {
+                    el.hidden = lang !== 'ko';
+                });
+                document.querySelectorAll('[data-en]').forEach(function (el) {
+                    el.hidden = lang !== 'en';
+                });
+                buttons.forEach(function (btn) {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+            }
+
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    setLang(btn.dataset.lang);
+                });
+            });
+
+            // Default to English for non-Korean browsers; Korean otherwise.
+            var prefersEnglish = (navigator.language || '').toLowerCase().indexOf('ko') !== 0;
+            if (prefersEnglish) {
+                setLang('en');
+            }
+        })();
+    </script>
+</body>
+</html>
