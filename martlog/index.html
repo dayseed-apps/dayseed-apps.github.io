@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마트로그 — 마트 가격 기록·비교</title>
+    <meta name="description" content="영수증을 찍으면 품목별 가격이 쌓이고, 장 보기 전에 '이거 전에 얼마였지?'를 바로 확인하는 마트 가격 노트.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #007aff, #34c759);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 17px;
+            color: #555;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            background-color: #1a1a1a;
+            color: #fff;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .store-button:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .store-button svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #444;
+        }
+
+        a {
+            color: #007aff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            margin-bottom: 14px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .feature-text .feature-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .feature-text .feature-desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .links-section {
+            margin-top: 40px;
+        }
+
+        .link-item {
+            display: block;
+            padding: 16px;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .link-item:hover {
+            background-color: #ebebed;
+            text-decoration: none;
+        }
+
+        .link-item .link-title {
+            font-weight: 600;
+            color: #007aff;
+            margin-bottom: 4px;
+        }
+
+        .link-item .link-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 16px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .tagline {
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .feature {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 2 6 6H3l1.5 14a2 2 0 0 0 2 1.9h11a2 2 0 0 0 2-1.9L21 6h-3l-3-4Z"></path>
+                    <path d="M9 6h6"></path>
+                </svg>
+            </div>
+            <h1>마트로그</h1>
+            <p class="tagline">영수증을 찍으면 품목별 가격이 쌓이고,<br>장 보기 전에 <strong>“이거 전에 얼마였지?”</strong>를 바로 확인하세요.</p>
+
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/kr/app/id6778012377" class="store-button">
+                    <svg viewBox="0 0 24 24" fill="#fff">
+                        <path d="M16.5 1.5c0 1.2-.5 2.4-1.3 3.2-.9.9-2.3 1.6-3.5 1.5-.1-1.2.5-2.4 1.3-3.2.9-.9 2.4-1.6 3.5-1.5Zm3.9 16.1c-.6 1.3-.9 1.9-1.6 3.1-1 1.6-2.5 3.7-4.3 3.7-1.6 0-2-1-4.1-1-2.1 0-2.6 1-4.2 1-1.8 0-3.2-1.9-4.2-3.6C-.9 18-1.1 12.6 1.1 9.7c1-1.4 2.5-2.2 4-2.2 1.7 0 2.7 1 4.1 1 1.3 0 2.1-1 4.1-1 1.4 0 2.9.8 3.9 2.1-3.4 1.9-2.9 6.8.1 8Z"></path>
+                    </svg>
+                    App Store
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h2>마트로그가 하는 일</h2>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"></path>
+                            <circle cx="12" cy="13" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-title">영수증 한 장이면 기록 끝</p>
+                        <p class="feature-desc">영수증을 촬영하면 품목·수량·가격을 자동으로 읽어 정리합니다.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3v18h18"></path>
+                            <path d="m19 9-5 5-4-4-3 3"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-title">품목별 가격 이력·그래프</p>
+                        <p class="feature-desc">같은 품목을 살 때마다 가격 변화가 쌓여, 오른 건지 싸진 건지 한눈에 보입니다.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1"></circle>
+                            <circle cx="19" cy="21" r="1"></circle>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+                        </svg>
+                    </div>
+                    <div class="feature-text">
+                        <p class="feature-title">장보기 전, 과거 가격 미리보기</p>
+                        <p class="feature-desc">사전 장바구니에 과거에 산 가격이 붙어, 이번 마트 가격이 비싼지 싼지 바로 비교됩니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="links-section">
+                <h2>더 알아보기</h2>
+                <a href="support/ko/" class="link-item">
+                    <p class="link-title">고객 지원</p>
+                    <p class="link-description">자주 묻는 질문과 문의 방법을 확인하세요</p>
+                </a>
+                <a href="privacy-policy/ko/" class="link-item">
+                    <p class="link-title">개인정보처리방침</p>
+                    <p class="link-description">데이터가 어떻게 처리되는지 확인하세요</p>
+                </a>
+                <a href="terms/ko/" class="link-item">
+                    <p class="link-title">이용약관</p>
+                    <p class="link-description">마트로그 이용 시 적용되는 약관을 확인하세요</p>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Dayseed. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
