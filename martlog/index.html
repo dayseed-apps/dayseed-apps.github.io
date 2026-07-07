@@ -35,19 +35,12 @@
         }
 
         .logo {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #007aff, #34c759);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 88px;
+            height: 88px;
+            border-radius: 20px;
+            display: block;
             margin: 0 auto 20px;
-        }
-
-        .logo svg {
-            width: 40px;
-            height: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
@@ -220,12 +213,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 2 6 6H3l1.5 14a2 2 0 0 0 2 1.9h11a2 2 0 0 0 2-1.9L21 6h-3l-3-4Z"></path>
-                    <path d="M9 6h6"></path>
-                </svg>
-            </div>
+            <img src="app-icon.png" class="logo" alt="마트로그 앱 아이콘" width="88" height="88">
             <h1>마트로그</h1>
             <p class="tagline">영수증을 찍으면 품목별 가격이 쌓이고,<br>장 보기 전에 <strong>“이거 전에 얼마였지?”</strong>를 바로 확인하세요.</p>
 
