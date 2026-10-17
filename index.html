@@ -282,16 +282,19 @@
                     </div>
 
                     <div class="app-card">
-                        <div class="app-title">Widget Calendar</div>
+                        <div class="app-title"><a href="/widget-calendar/?lang=ko" data-widget-intro>Widget Cal</a></div>
                         <div class="app-kind">
                             <span data-ko>캘린더 위젯</span>
                             <span data-en hidden>Calendar Widget</span>
                         </div>
                         <p class="app-desc">
-                            <span data-ko>홈 화면에서 일정을 한눈에 확인하는 캘린더 위젯입니다. 로그인 없이 가볍게 쓸 수 있어요.</span>
-                            <span data-en hidden>A home-screen calendar widget to see your schedule at a glance. No login, simple and lightweight.</span>
+                            <span data-ko>한 달의 흐름부터 오늘의 약속까지, 홈 화면에서 한눈에 확인해요. 크기와 표시 방식을 고르는 캘린더 위젯으로 쓰던 기기 캘린더를 더 편하게 만나보세요.</span>
+                            <span data-en hidden>Your month, your week and what comes next, at a glance. Choose a calendar widget size and event style, and keep your device calendars close on your Home screen.</span>
                         </p>
                         <div class="app-links">
+                            <a href="/widget-calendar/?lang=ko" data-widget-intro>
+                                <span data-ko>앱 소개</span><span data-en hidden>Explore Widget Cal</span>
+                            </a>
                             <a href="https://apps.apple.com/app/id1078875308" target="_blank" rel="noopener noreferrer">App Store</a>
                             <a href="/widget-calendar/support/">
                                 <span data-ko>고객지원</span><span data-en hidden>Support</span>
@@ -330,6 +333,9 @@
 
             function setLang(lang) {
                 document.documentElement.lang = lang;
+                document.querySelectorAll('[data-widget-intro]').forEach(function (link) {
+                    link.href = '/widget-calendar/?lang=' + lang;
+                });
                 document.querySelectorAll('[data-ko]').forEach(function (el) {
                     el.hidden = lang !== 'ko';
                 });
